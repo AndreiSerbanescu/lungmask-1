@@ -2,7 +2,7 @@
 
 This nip2 workspace finds lungs in CT images.
 
-## `convert.py` 
+### `convert.py` 
 
 Convert the DICOMs in the covid19 dataset to nifti volumes. The covid19 dataset
 is in:
@@ -11,9 +11,10 @@ is in:
 
 Download the zips and run the converter to make a set of niftis.
 
-## `find-lungs.ws` 
+### `find-lungs.ws` 
 
-This nip2 workspace finds the lungs. Sample output:
+This [nip2](https://github.com/libvips/nip2) workspace finds the lungs. Sample
+output (this image has been shrunk -- the real output is huge):
 
 [![Sample output](tn_lung-mask.jpg)](lung-mask.png)
 
@@ -32,7 +33,7 @@ The "algorithm" is very simple:
 * for each slice, the left-hand blob becomes the mask for that slice of the left
   lung mask
 
-## Improvements
+### Improvements
 
 * It doesn't know about the diaphragm. I was working with PET scanners and 
   ignoring the area near the diaphragm was the easiest way to get rid of 
