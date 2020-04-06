@@ -50,7 +50,7 @@ The "algorithm" is very simple:
 
 For dicom to nifty file conversion, you can run the `run_container.py` script.
 
-```python
+```
   -o OUTPUT, --output OUTPUT
                         Host path to output directory or filename
   -s SOURCE, --source SOURCE
@@ -59,6 +59,6 @@ For dicom to nifty file conversion, you can run the `run_container.py` script.
 
 Example use case:
 
-```python
+```
 python3 run_container.py --source ./source/ --output ./output/out.nii.gz
 ```
