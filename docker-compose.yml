@@ -1,0 +1,9 @@
+version: '3'
+services:
+  lungmask_converter:
+    build: ./
+    container_name: lungmask_converter
+    hostname: lungmask_converter
+    ports:
+      - "5002:5002"
+    command: python3 /app/start.py

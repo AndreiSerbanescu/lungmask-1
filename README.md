@@ -46,3 +46,19 @@ The "algorithm" is very simple:
   a lung slice) and at the bottom (intestinal gas bubbles become larger than
   lung slices). Again, a 3D reimplementation should fix this.
 
+### Docker container usage
+
+For dicom to nifty file conversion, you can run the `run_container.py` script.
+
+```python
+  -o OUTPUT, --output OUTPUT
+                        Host path to output directory or filename
+  -s SOURCE, --source SOURCE
+                        Host path to dcm source volume directory or filename
+```
+
+Example use case:
+
+```python
+python3 run_container.py --source ./source/ --output ./output/out.nii.gz
+```
