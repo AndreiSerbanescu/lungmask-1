@@ -14,3 +14,4 @@ COPY find-lungs.ws /app/find-lungs.ws
 COPY lung-mask.png /app/lung-mask.png
 COPY tn_lung-mask.jpg /app/tn_lung-mask.jpg
 COPY start.py /app/start.py
+COPY listen.py /app/listen.py
