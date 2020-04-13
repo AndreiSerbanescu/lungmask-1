@@ -15,10 +15,14 @@ def convert(param_dict):
     output_dir     = os.path.join(data_share, rel_output_dir)
 
     conversion_command = "python3 /app/convert.py {} && mv {}.nii.gz {}".format(source_dir, source_dir, output_dir)
-    sb.call([conversion_command], shell=True)
+    exit_code = sb.call([conversion_command], shell=True)
+
+    # if conversion_command wasn't successful
+    if exit_code == 1:
+        return {}, False
 
     result_dict = { "filename":  rel_output_dir}
-    return result_dict
+    return result_dict, True
 
 
 if __name__ == "__main__":
