@@ -8,6 +8,11 @@ def convert(param_dict):
     print("### converter got parameters {}".format(param_dict))
 
     rel_source_dir = param_dict["source_dir"][0]
+    # remove trailing / at the beggining of name
+    # otherwise os.path.join has unwanted behaviour for base dirs
+    # i.e. join(/app/data_share, /app/wrongpath) = /app/wrongpath
+    rel_source_dir = rel_source_dir.lstrip('/')
+
     data_share     = os.environ["DATA_SHARE_PATH"]
     source_dir     = os.path.join(data_share, rel_source_dir)
 
