@@ -3,6 +3,7 @@ import os
 import time
 from common.utils import *
 from common import listener_server
+from common import utils
 
 def convert(param_dict):
     print("### converter got parameters {}".format(param_dict))
@@ -16,7 +17,9 @@ def convert(param_dict):
     data_share     = os.environ["DATA_SHARE_PATH"]
     source_dir     = os.path.join(data_share, rel_source_dir)
 
-    rel_output_dir = "converter-output-" + str(time.time()) + ".nii.gz"
+    unique_id = utils.get_unique_id()
+
+    rel_output_dir = "converter-output-" + unique_id + ".nii.gz"
     output_dir     = os.path.join(data_share, rel_output_dir)
 
     conversion_command = "python3 /app/convert.py {} && mv {}.nii.gz {}".format(source_dir, source_dir, output_dir)

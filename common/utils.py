@@ -2,6 +2,11 @@ import logging
 import sys
 import os
 import subprocess as sb
+import time
+import random
+
+def get_unique_id():
+    return str(time.time()) + "-" + str(random.randint(0, 10000000))
 
 def setup_logging():
     file_handler = logging.FileHandler("../log.log")
@@ -38,11 +43,11 @@ def log_info(*msg):
 def log_debug(*msgs):
     logging.debug(__get_print_statement(*msgs))
 
-def log_critica(*msg):
-    logging.critical(__get_print_statement(*msg))
-
 def log_warning(*msg):
     logging.warning(__get_print_statement(*msg))
+
+def log_error(*msg):
+    logging.error(__get_print_statement(*msg))
 
 def log_critical(*msg):
     logging.critical(__get_print_statement(*msg))
