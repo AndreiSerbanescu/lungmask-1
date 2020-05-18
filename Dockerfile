@@ -2,8 +2,9 @@ FROM ubuntu:latest
 
 WORKDIR /app
 
+ARG DEBIAN_FRONTEND=noninteractive
 # install python
-RUN apt-get update && apt-get install -y python python-dev python3.7 python3.7-dev python3-pip \
+RUN apt-get update && apt-get install -y python3 python3-dev python3-pip \
     virtualenv libssl-dev libpq-dev git build-essential libfontconfig1 libfontconfig1-dev
 RUN pip3 install setuptools pip --upgrade --force-reinstall
 
