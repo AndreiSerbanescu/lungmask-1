@@ -22,7 +22,7 @@ def convert(param_dict):
     rel_output_dir = "converter-output-" + unique_id + ".nii.gz"
     output_dir     = os.path.join(data_share, rel_output_dir)
 
-    conversion_command = "python3 /app/convert.py {} && mv {}.nii.gz {}".format(source_dir, source_dir, output_dir)
+    conversion_command = "python3 /app/convert.py {} && cp {}.nii.gz {}".format(source_dir, source_dir, output_dir)
     exit_code = sb.call([conversion_command], shell=True)
 
     # if conversion_command wasn't successful
